@@ -44,6 +44,10 @@ class Child extends Parents
     {//вызываем function snow() родителя
         return parent::snow();// или $this->snow();
     }
+    public  function snow()
+    {
+        echo $this->z;
+    }
 }
 
 //$obj = new Parents('Родитель ');
@@ -53,7 +57,7 @@ $obj2 = new Child('123', 1 ,2,3);//вызывает конструктор ро�
 //echo '2 '. $obj2->getProp().'<br>';
 var_dump($obj2);
 echo '<br>'.$obj2->getParentShow().'<br>';
-
+echo $obj2->snow();
 
 
 
