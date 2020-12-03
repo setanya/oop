@@ -7,7 +7,7 @@ class Control
     private $width;
     private $height;
 
-    /**
+    /** родитель Control
      * @return mixed
      */
     public function getBackground()

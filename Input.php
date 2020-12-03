@@ -6,7 +6,7 @@ class Input extends Control
     private $name;
     private $value;
 
-    /**
+    /** родитель Control -> наследник Input
      * @return mixed
      */
     public function getName()

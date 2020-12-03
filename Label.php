@@ -4,7 +4,7 @@
 class Label extends Input// if нужно передать объект
 {
     private $for;
-
+//родитель Control -> наследник Input -> наследник Label
     public function __construct($background,$width,$height, $name, $value,$forObject)
     {
         $this->setBackground($background);

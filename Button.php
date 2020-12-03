@@ -4,9 +4,8 @@
 class Button extends Input
 {
     private $isSubmit;
-
-
-    public function __construct($background,$width,$height, $name, $value, $isSubmit)
+    //родитель Control -> наследник Input -> наследник Button//
+    public function __construct($background, $width, $height, $name, $value, $isSubmit)
     {
         $this->setBackground($background);//родитель
         $this->setWidth($width);//родитель

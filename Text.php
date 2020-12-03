@@ -4,7 +4,7 @@
 class Text extends Input
 {
     private $placeholder;
-
+//родитель Control -> наследник Input -> наследник Text
     public function __construct($background,$width,$height, $name, $value, $placeholder)
     {
         $this->setBackground($background);
