@@ -10,9 +10,7 @@ class Select extends Control
         $this->setBackground($background);//родитель
         $this->setWidth($width);//родитель
         $this->setHeight($height);//родитель
-        //$this->setName($name);//1наследник$name, $value,
-        //$this->setValue($value);//1наследник
-        $this->items = $items ;
+        $this->items[] = $items ;//обращается к массиву и дописываем
     }
     public function getItems()
     {//не принимает ничего в качестве параметра и возвращает значение поля items
@@ -25,12 +23,20 @@ class Select extends Control
      */
     public function setItems($it)
     {
-            $this->items[] = $it;//$help->setItems(19);
-        return $this;
+        $this->items[] = $it;//$help->setItems(19);дописываем в массив
+        return $this;//возращаемся чтобы можно было $help->setItems(19)->setItems(1)->setItems(9);
     }
-//    public function setItems($i)
+//    public function convertToHTML()
 //    {
-//        $this->items[] = array_push($this->items,$i);
-//        return $this;
+//
+//        $str = '';
+//        $str .= '<select ';
+//        $str .= 'name= "' . $this->getItems() . '" ';
+//        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . ' px; width:' . $this->getWidth() . ' px;"/>';
+//        foreach ($this->items as $item){
+//            $str .= '<option>'.$item.'<option>';
+//        }
+//        $str .= '<select>';
+//        return $str;
 //    }
 }

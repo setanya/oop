@@ -3,6 +3,7 @@ class User
 {
     private $name;//свойство
     private  $age;//свойство
+    //const LOGIN = 'admin';//константа
     //метод "конструктор" вызов автоматически
     //private $name;//свойство
     //private  $age;//свойство
@@ -14,6 +15,7 @@ class User
 //     }
      public function getAge()//private  $age;
      {
+         //self::LOGIN;//обращеник к константе
          return $this->age;
      }
 
@@ -36,6 +38,9 @@ class User
         $this->name = $name;
     }
 }
+//вывод константы
+//echo 'My login is'.User::LOGIN;
+
 $man = new User;//без function __construct($n, $a)
 $man->setAge(25);
 $man->setName('Vova');

@@ -26,6 +26,14 @@ class Text extends Input
     {
         $this->placeholder = $placeholder;
     }
+    public function convertToHTML()
+    {
+        $str = '';
+        $str .= '<input type ="text" ';
+        $str .= 'name= "' . $this->getName() . '" ';
+        $str .= 'value="' . $this->getValue() . '" ';
+        $str .= 'placeholder="'.$this->getPlaceholder().'" ';
+        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . ' px; width:' . $this->getWidth() . ' px;"/>';
+        return $str;
+    }
 }
-;
- ;

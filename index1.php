@@ -8,6 +8,9 @@ require_once 'Label.php';//родитель -> наследник Input -> на�
 require_once 'Radio.php';//родитель -> наследник Input -> наследник Radio
 require_once 'Checkbox.php';//родитель -> наследник Input -> наследник Checkbox
 require_once  'Select.php';//родитель  -> наследник Select
+require_once  'Point.php';//родитель  -> наследник
+require_once  'CircleC.php';//родитель  -> наследник
+require_once  'Rectangles.php';//родитель  -> наследник
 
 //формирует тег<input на основе данных объекта
 
@@ -55,7 +58,7 @@ function convertToHTML($object)
 
 $control = new Control();//вызов объека родителя
 //ПОЛЕ ВВОДА  вывод значений через конструктор родителя и наследников
-$text = new Text('#e4d0ec', 240, 30, 'text', '', 'Введите имя');
+$text = new Text('#e4d0ec', 240, 130, 'text', '', 'Введите имя');
 echo '</br>';
 echo "Имя  ".convertToHTML($text);
 echo '</br>';
@@ -66,16 +69,21 @@ echo '</br>';
 
 //выпадающий список
 
-//$select = new Select('',  '', '', "Раздел 5");
-$s = new Select();
-$s->setItems('Раздел 1');
-$s->setItems('Раздел 2');
-$s->setItems('Раздел 3');
-$s->setItems('Раздел 4');
+$select = new Select('',  '', '', "Раздел 5");
+$select->setItems('Раздел a')->setItems('Раздел c')->setItems('Раздел t');
+
+//$s = new Select();
+//$s->setItems('Раздел 1');
+//$s->setItems('Раздел 2');
+//$s->setItems('Раздел 3');
+//$s->setItems('Раздел 4');
+
 echo '</br>';
 echo convertToHTML($s);
 echo '</br>'.'</br>';
-
+echo '</br>';
+echo convertToHTML($select);
+echo '</br>'.'</br>';
 //радио кнопки М и Ж
 $rad = new Radio('','' ,'' ,'sex' , 'male', true);
 echo "Мужчина  ".convertToHTML($rad);
@@ -100,3 +108,32 @@ echo '<br>';
 //var_dump(convertToHTML($button));
 //echo '</pre>';
 
+/***********************/
+$arItems = [];
+
+$arItems[]= new CircleC(2, 5,50);
+$arItems[]= new Rectangles(2, 5,100, 50);
+foreach ($arItems as $item){
+    echo $item->show();
+    echo '<br>';
+}
+$total = 0;
+foreach ($arItems as $item){
+    $total+= $item->area();//дописываем  в $total
+//сложили числа
+}
+echo $total;
+//$p = new Point(2, 5);
+//$p->show();
+echo '<br>';
+echo '<br>';
+$object = new Button('green', 100, 30, 'submit', 'отправить', true );
+echo $object->convertToHTML();
+echo '<br>';
+echo '<br>';
+$input = new Text('', 150, 30, 'text', '', 'введите  желание');
+echo $input->convertToHTML();
+echo '<br>';
+echo '<br>';
+$sel = new Select('', 120, 20,  [1, 2, 3]);
+echo $sel->convertToHTML();
