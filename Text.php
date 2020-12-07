@@ -33,7 +33,7 @@ class Text extends Input
         $str .= 'name= "' . $this->getName() . '" ';
         $str .= 'value="' . $this->getValue() . '" ';
         $str .= 'placeholder="'.$this->getPlaceholder().'" ';
-        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . ' px; width:' . $this->getWidth() . ' px;"/>';
+        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . 'px; width:' . $this->getWidth() . 'px;"/>';
         return $str;
     }
 }

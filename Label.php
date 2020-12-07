@@ -23,4 +23,7 @@ class Label extends Input// if нужно передать объект
     {
         $this->for=$obj->getName();
     }
+    public function convertToHTML(){//абстракциия из Input
+
+    }
 }

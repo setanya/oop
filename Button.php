@@ -37,7 +37,7 @@ class Button extends Input
         $str .='<input type ="'.$type.'" ';
         $str .='name= "'.$this->getName().'" ';
         $str .= 'value="'.$this->getValue().'" ';
-        $str .='style = "background: '.$this->getBackground().'; height: '.$this->getHeight().' px; width:'.$this->getWidth().' px;"/>';
+        $str .='style = "background: '.$this->getBackground().'; height: '.$this->getHeight().'px; width:'.$this->getWidth().'px;"/>';
         return $str;
         //return '<input type ="'.$type.'" name= "'.$this->getName().'" value="'.$this->getValue().'" style = "background: '.$this->getBackground().'; height: '.$this->getHeight().' px; width:'.$this->getWidth().' px;"/>';
     }

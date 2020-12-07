@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class Point
+ class Point //abstract
 {
     protected $x;
     protected $y;//protected - защищенная
@@ -15,9 +15,21 @@ abstract class Point
     {
         echo 'x = '.$this->x.'y = '.$this->y;
     }
-   abstract public function area();//здесь реализация ненужна
-
-    abstract public function perimeter();
+//   abstract public function area();//здесь реализация ненужна
+//
+//    abstract public function perimeter();
 
 }
 //создавать $arItems[]= new Point(2, 5); НЕЛЬЗЯ НЕЛЬЗЯ создавать объекты
+
+
+
+
+
+
+
+
+
+
+
+

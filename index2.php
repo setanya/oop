@@ -14,7 +14,7 @@ require_once 'Rectangles.php';//родитель  -> наследник
 
 $control = new Control();//вызов объека родителя
 echo '<br>';
-echo "Форма регистрации".'<br>';
+echo '<form>'."Форма регистрации".'<br>';
 echo '<br>';
 echo 'Имя'.'<br>';
 $input = new Text('red', 150, 30, 'text', '', 'Ваше имя');
@@ -22,7 +22,7 @@ echo $input->convertToHTML();
 echo '<br>';
 
 echo '<br>'.'Фамилия'.'<br>';
-$input = new Text('', 100, 30, 'text', '', '');
+$input = new Text('', 150, 30, 'text', '', '');
 echo $input->convertToHTML();
 echo '<br>';
 
@@ -44,13 +44,13 @@ echo $sel->convertToHTML().'<br>';
 echo '<br>';
 
 echo 'Дом';
-$input1 = new Text('',20 , 30, 'text', '', '');
+$input1 = new Text('',50 , 30, 'text', '', '');
 echo $input1->convertToHTML();
-echo 'Корпус';
-$input1 = new Text('',20 , 30, 'text', '', '');
+echo '  Корпус';
+$input1 = new Text('',50 , 30, 'text', '', '');
 echo $input1->convertToHTML();
-echo 'Квартира';
-$input = new Text('',20 , 30, 'text', '', '');
+echo '  Квартира';
+$input = new Text('',50 , 30, 'text', '', '');
 echo $input->convertToHTML();
 echo '<br>';
 
@@ -58,9 +58,10 @@ $rc = new Checkbox('', '10', '10','contact', '', 'checkbox');
 echo '<br>'.$rc->convert1ToHTML().'Подтвердите что Вы не робот'.'<br>';
 echo '<br>';
 echo '<br>';
-$obj = new Button('#eae100', 50, 50, 'submit', 'отправить', true );
+$obj = new Button('#eae100', 100, 50, 'submit', 'отправить', true );
 echo $obj->convertToHTML();
 echo '<br>';
 echo '<pre>';
-var_dump($obj);
+var_dump($obj);//вывели массив с данными
 echo '</pre>';
+echo '</form>';

@@ -1,7 +1,7 @@
 <?php
+//require_once 'PointInterface.php';//подключение интерфейса
 
-
-class Rectangles extends Point
+class Rectangles extends Point implements PointInterface
 {
     private $w;//
     private $h;//

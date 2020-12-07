@@ -18,7 +18,7 @@ class Select1 extends Control
         $str = '';
         $str .= '<select ';
         $str .= 'name= "' . $this->name. '" ';
-        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . ' px; width:' . $this->getWidth() . ' px;"/>';
+        $str .= 'style = "background: ' . $this->getBackground() . '; height: ' . $this->getHeight() . 'px; width:' . $this->getWidth() . 'px;"/>';
         foreach ($this->arItems as $item){//организуется цикл
             $str .= '<option>'.$item.'<option>';//сколько придет значений в массив, стоолько <option> будет
         }
