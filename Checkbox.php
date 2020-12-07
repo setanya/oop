@@ -26,4 +26,17 @@ class Checkbox extends Input
     {
         $this->isChecked = $isChecked;
     }
+    ////<input type = "checkbox" name = "type1" value = "low">Меньше 18<br>
+    public function convertToHTML(){
+        $str = '';
+        $str .= '<input type="checkbox"  name="'.$this->getName().'" value="'.$this->getValue().'">';
+        return $str;
+    }
+    //2вариант работает на 'radio' и 'checkbox' одна функция
+    public function convert1ToHTML(){
+        $type = $this->isChecked;
+        $str = '';
+        $str .= '<input type="'.$type.'"  name="'.$this->getName().'" value="'.$this->getValue().'">';
+        return $str;
+    }
 }

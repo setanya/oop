@@ -34,5 +34,12 @@ class Radio extends Input
     public function setCheckedState($isChecked = true)
     {
         $this->isChecked = $isChecked;
+    }//<input type="radio"  name="contact" value="email">
+
+    public function convertToHTML(){
+        $str = '';
+
+        $str .= '<input type="radio"  name="'.$this->getName().'" value="'.$this->getValue().'">';
+        return $str;
     }
 }

@@ -8,6 +8,7 @@ require_once 'Label.php';//родитель -> наследник Input -> на�
 require_once 'Radio.php';//родитель -> наследник Input -> наследник Radio
 require_once 'Checkbox.php';//родитель -> наследник Input -> наследник Checkbox
 require_once  'Select.php';//родитель  -> наследник Select
+require_once  'Select1.php';//родитель  -> наследник Select
 require_once  'Point.php';//родитель  -> наследник
 require_once  'CircleC.php';//родитель  -> наследник
 require_once  'Rectangles.php';//родитель  -> наследник
@@ -135,5 +136,32 @@ $input = new Text('', 150, 30, 'text', '', 'введите  желание');
 echo $input->convertToHTML();
 echo '<br>';
 echo '<br>';
-$sel = new Select('', 120, 20,  [1, 2, 3]);
+$sel = new Select1('', 120, 20,''  , ['молоко', 'мясо', 'фрукты','овощи']);
 echo $sel->convertToHTML();
+echo '<br>';
+echo '<br>';
+$radio = new Radio('red', '10', '','contact', 'email', true);
+echo $radio->convertToHTML().'это продукты'.'<br>';
+echo $radio->convertToHTML().'это промтовары'.'<br>';
+echo '<br>';
+echo '<br>';
+
+$radioR = new Checkbox( '', '','','contact','email','checkbox');
+$radio1 = new Checkbox( '', '','','contact','email','radio');
+$radio2 = new Checkbox( '', '','','contact','email','checkbox');
+echo $radioR->convertToHTML().'это одиночная функция '.'<br>';
+echo $radio1->convert1ToHTML().'это новая функция convert1ToHTML() если type="radio"'.'<br>';
+echo $radio2->convert1ToHTML().'это новая функция convert1ToHTML()если type="checkbox"'.'<br>';
+echo '<br>';
+echo '<br>';
+
+
+
+
+
+
+
+
+
+
+

@@ -4,12 +4,15 @@ require_once 'Calculate.php';//подключение класса
 //$obj = new Calculate();
 //echo $obj->plus(5,7);
 //статичесий  метод обращения
-
-echo Calculate::plus(5,7);//имя класса и его метод
+echo '<br>'."Функция статического сложение = ". Calculate::plus(5,7);
+//echo Calculate::plus(5,7);//имя класса и его метод
 echo '<br>';
+echo '<br>'."Функция статического вычитания".'<br>';
 echo Calculate::minus(15,5);
-
-
+echo '<br>'."Функция статического умножения".'<br>';
+echo Calculate::multiplication(9,5);
+echo '<br>'."Функция статического деления = ".Calculate::division(90,0).'<br>';
+echo Calculate::division(9,10);
 
 
 //class First

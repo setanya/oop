@@ -5,13 +5,13 @@ class Text extends Input
 {
     private $placeholder;
 //родитель Control -> наследник Input -> наследник Text
-    public function __construct($background,$width,$height, $name, $value, $placeholder)
+    public function __construct($background, $width, $height, $name, $value, $placeholder)
     {
-        $this->setBackground($background);
-        $this->setWidth($width);
-        $this->setHeight($height);
-        $this->setName($name);
-        $this->setValue($value);
+        $this->setBackground($background);//родитель
+        $this->setWidth($width);//родитель
+        $this->setHeight($height);//родитель
+        $this->setName($name);//1наследник
+        $this->setValue($value);//1наследник
         $this->placeholder = $placeholder;
     }
     public function getPlaceholder()
