@@ -11,6 +11,31 @@ require_once 'Select1.php';//родитель  -> наследник Select
 require_once 'Point.php';//родитель  -> наследник
 require_once 'CircleC.php';//родитель  -> наследник
 require_once 'Rectangles.php';//родитель  -> наследник
+require_once 'app/menu/Menu.php';//подключение меню
+require_once 'app/menu/MenuItem.php';//подключение меню
+
+
+/*   раздел меню */
+use menu\MenuItem;//передали пространство имен
+use menu\Menu;//передали пространство имен
+
+$a = new Menu();//объект класса Menu
+//$a->PrintMenu(1000,100, 'green', 'black');//метод PrintMenu
+echo $a->PrintMenu(1000,100, '#0fb0f8', 'red', ['Home','About','Photo','Contact Us', 'Login']). '<br>';//вывело цветной квадрат
+
+//$a= new MenuItem('','');
+//echo '<br>';
+echo $a->AddMenuItem('#', 'Home');
+echo $a->AddMenuItem('#', 'About');
+echo $a->AddMenuItem('#', 'Photo');
+echo $a->AddMenuItem('#', 'Contact Us');
+echo $a->AddMenuItem('#', 'Login');
+//echo '<br>'.'<br>'.'<br>';
+echo '<br>';
+
+
+
+/*Форма регистрации----------------------------------------------------------------------------*/
 
 $control = new Control();//вызов объека родителя
 echo '<br>';

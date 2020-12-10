@@ -1,5 +1,5 @@
 <?php
-//require_once 'PointInterface.php';//подключение интерфейса
+require_once 'PointInterface.php';//подключение интерфейса
 
 class CircleC extends Point implements PointInterface //implements подключение интерфейса
 {
