@@ -1,10 +1,10 @@
 <?php
-namespace menu;//подключили пространство имен
+namespace app\menu;//подключили пространство имен    app(папка)\menu(папка)\
 
 class MenuItem
 {
-    private $url;
-    private $name;
+    public $url;
+    public $name;
 
     public function __construct($url, $name)
     {

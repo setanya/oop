@@ -1,4 +1,6 @@
 <?php
+
+
 require_once 'Control.php';//родитель
 require_once 'Input.php';//родитель -> наследник Input
 require_once 'Button.php';//родитель -> наследник Input -> наследник Button
@@ -21,15 +23,18 @@ use menu\Menu;//передали пространство имен
 
 $a = new Menu();//объект класса Menu
 //$a->PrintMenu(1000,100, 'green', 'black');//метод PrintMenu
-echo $a->PrintMenu(1000,100, '#0fb0f8', 'red', ['Home','About','Photo','Contact Us', 'Login']). '<br>';//вывело цветной квадрат
-
-//$a= new MenuItem('','');
-//echo '<br>';
 echo $a->AddMenuItem('#', 'Home');
 echo $a->AddMenuItem('#', 'About');
 echo $a->AddMenuItem('#', 'Photo');
 echo $a->AddMenuItem('#', 'Contact Us');
 echo $a->AddMenuItem('#', 'Login');
+
+
+echo $a->PrintMenu(1000,100, '#0fb0f8', 'red'). '<br>';//вывело цветной квадрат
+
+//$a= new MenuItem('','');
+//echo '<br>';
+
 //echo '<br>'.'<br>'.'<br>';
 echo '<br>';
 
