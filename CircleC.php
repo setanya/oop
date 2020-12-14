@@ -19,8 +19,8 @@ class CircleC extends Point implements PointInterface //implements подклю�
         return PointInterface::PI * $this->r * $this->r;//PointInterface::PI -это константа реализуется
     }        //константа задана в интерфейсе
     public function perimeter()
-        //реализация интерфейса
-    {
+
+    {//реализация интерфейса
         return 2 * PointInterface::PI * $this->r;
     }
 

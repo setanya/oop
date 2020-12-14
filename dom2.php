@@ -5,7 +5,7 @@ class Employer //объект
     private $name;
     private $age;
     private $salary;
-    //public $arrSalary = [];
+    //pubpablic $arrSalary = [];
 
     public function __construct($n,$a)//обязательно ждёт число
     {

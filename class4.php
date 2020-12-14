@@ -2,7 +2,7 @@
 //родитель
 class Parents
 {
-    //public $prop ='это родитель';
+    //pubpablic $prop ='это родитель';
     public $prop;//закрытое свойство родителя
     protected $x;
     protected $y;
@@ -26,7 +26,7 @@ class Parents
 // наследник
 class Child extends Parents
 {
-    //public $prop ='это ребёнок';
+    //pubpablic $prop ='это ребёнок';
     //protected $p = '1 ребёнок';
     public $z;
 
@@ -64,11 +64,11 @@ echo $obj2->snow();
 
 //class Child2 extends Child
 //{
-//  public function getP()
+//  pubpablic function getP()
 /// {
 //  return "class Child свойство первого ребёнка". $this->p;
 // }
-// public function getParentProp(){
+// pubpablic function getParentProp(){
 //return 'class Child2 второй ребенок - со свойством родителя'.$this->prop;
 //}
 //}

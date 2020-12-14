@@ -37,5 +37,5 @@ abstract class Input extends Control
     {
         $this->value = $value;
     }
-    abstract public function convertToHTML();
+    abstract public function convertToHTML();//абстракциия из
 }

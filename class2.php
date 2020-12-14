@@ -4,8 +4,8 @@ class Student  //объект
     private $name;      // свойства объекта
     private $course = 1; // свойства объекта
     //метод конструктор вызов автоматически
-//    public function __construct($name, $course)
-//        //всегда public function __construct()
+//    pubpablic function __construct($name, $course)
+//        //всегда pubpablic function __construct()
 //    {
 //        $this->name = $name;
 //        $this->course = $course;

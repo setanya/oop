@@ -15,9 +15,9 @@
     {
         echo 'x = '.$this->x.'y = '.$this->y;
     }
-//   abstract public function area();//здесь реализация ненужна
+//   abstract pubpablic function area();//здесь реализация ненужна
 //
-//    abstract public function perimeter();
+//    abstract pubpablic function perimeter();
 
 }
 //создавать $arItems[]= new Point(2, 5); НЕЛЬЗЯ НЕЛЬЗЯ создавать объекты

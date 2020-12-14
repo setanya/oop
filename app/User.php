@@ -8,8 +8,8 @@ class User
     //метод "конструктор" вызов автоматически
     //private $name;//свойство
     //private  $age;//свойство
-    //только public
-//    public function __construct($n, $a)
+    //только pubpablic
+//    pubpablic function __construct($n, $a)
 //     {
 //       $this->age = $a;//свойство имени равно значению аргументу функции
 //       $this->name = $n;//передаем значение из аргумента
@@ -60,7 +60,7 @@ class User
 ////$man2->age = '30';
 ////var_dump($man2);
 //echo '<br>';
-////echo 'My name is   '. $man->name .'  age '. $man->age. '  yeas old';//public $age
+////echo 'My name is   '. $man->name .'  age '. $man->age. '  yeas old';//pubpablic $age
 ////private  $age;
 //echo 'My name is   '. $man->getName() .'  age '. $man->getAge(). '  yeas old';
 //echo '<br>';

@@ -26,7 +26,7 @@ class Select extends Control
         $this->items[] = $it;//$help->setItems(19);дописываем в массив
         return $this;//возращаемся чтобы можно было $help->setItems(19)->setItems(1)->setItems(9);
     }
-//    public function convertToHTML()
+//    pubpablic function convertToHTML()
 //    {
 //
 //        $str = '';

@@ -20,7 +20,7 @@ class Cars
     }
 }
 
-$obj = new Cars(2);//обязательно для передачи значения в public function __construct($t)
+$obj = new Cars(2);//обязательно для передачи значения в pubpablic function __construct($t)
 
 echo 'Права категории '. $obj->getCateory();
 echo '<br>';
@@ -54,13 +54,13 @@ echo '<br>';
 /*----------------------------------------------------------------------------*/
 //class Country
 //{
-//    public $arCountry = [];//создали массив
+//    pubpablic $arCountry = [];//создали массив
 //
-//    public function setCountry($c)//private
+//    pubpablic function setCountry($c)//private
 //    {//дописать в конец массива
 //        $this->arCountry[] = $c;//устанавливаем значение $arCountry[] =$c
 //    }
-//    public function getArCountry()
+//    pubpablic function getArCountry()
 //    {//возвращаем значение в $arCountry = []
 //        return $this->arCountry[];
 //    }
@@ -76,7 +76,7 @@ echo '<br>';
 //echo print_r($country->getArCountry());
 //echo '</pre>';
 //
-//$country->arCountry[] = 'Аргентина';// public $arCountry = [];
+//$country->arCountry[] = 'Аргентина';// pubpablic $arCountry = [];
 //echo '<pre>';
 //echo print_r($country->arCountry);
 //echo '</pre>';
@@ -98,7 +98,7 @@ class Country
     }
 }
 $country = new Country();
-$country->arCountry[] = 'Аргентина';// public $arCountry = [];
+$country->arCountry[] = 'Аргентина';// pubpablic $arCountry = [];
 $country->setCountry('Беларусь');
 $country->setCountry('Норвегия');
 echo print_r($country->getArCountry());

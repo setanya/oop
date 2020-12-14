@@ -24,6 +24,6 @@ class Label extends Input// if нужно передать объект
         $this->for=$obj->getName();
     }
     public function convertToHTML(){//абстракциия из Input
-
+//так как у инпута абстрактный метод  то у наследника вызвать нериализованный метод
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace app\menu;//подключили пространство имен    app(папка)\menu(папка)\
+namespace app\menu;//подключили пространство имен
 
 class MenuItem
 {

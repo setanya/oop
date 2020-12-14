@@ -48,10 +48,10 @@ echo Calculate::division(9,10);
 //class First
 //{//тело класса
 // //свойства класса
-//   public $hello = 'HELLO ';
-//   public $str = 'world !';
+//   pubpablic $hello = 'HELLO ';
+//   pubpablic $str = 'world !';
 //   //метод класса
-//   public function hello()
+//   pubpablic function hello()
 //    {
 //       $a = $this->str;
 //       $s = $this->hello;
@@ -66,7 +66,7 @@ echo Calculate::division(9,10);
 ////вывести объект->со свойствами
 ////echo $obj->hello;
 ////echo $obj->str;
-////вывод метода //public function hello()
+////вывод метода //pubpablic function hello()
 ////$obj->hello();
 //$obj->hello = 'Привет ';//присваиваем
 //$obj->str = 'солнышко !';//переопределяем

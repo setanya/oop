@@ -1,25 +1,35 @@
 <?php
+use \app\menu\MenuItem;//передали пространство имен
+use \app\menu\Menu;//передали пространство имен
+function auto_load($class)//наша функция для авто загрузги с пространством имен
+{
 
+    $str = str_replace('\\', '/', $class);//нужна для замены слешей, для формирования пути
+    //echo $str . '.php';
+    require_once $str . '.php';
+}
 
-require_once 'Control.php';//родитель
-require_once 'Input.php';//родитель -> наследник Input
-require_once 'Button.php';//родитель -> наследник Input -> наследник Button
-require_once 'Text.php';//родитель -> наследник input -> наследник Text
-require_once 'Label.php';//родитель -> наследник Input -> наследник Label
-require_once 'Radio.php';//родитель -> наследник Input -> наследник Radio
-require_once 'Checkbox.php';//родитель -> наследник Input -> наследник Checkbox
-require_once 'Select.php';//родитель  -> наследник Select
-require_once 'Select1.php';//родитель  -> наследник Select
-require_once 'Point.php';//родитель  -> наследник
-require_once 'CircleC.php';//родитель  -> наследник
-require_once 'Rectangles.php';//родитель  -> наследник
-require_once 'app/menu/Menu.php';//подключение меню
-require_once 'app/menu/MenuItem.php';//подключение меню
+spl_autoload_register('auto_load');//функция автозагрузки
+
+//require_once 'Control.php';//родитель
+//require_once 'Input.php';//родитель -> наследник Input
+//require_once 'Button.php';//родитель -> наследник Input -> наследник Button
+//require_once 'Text.php';//родитель -> наследник input -> наследник Text
+//require_once 'Label.php';//родитель -> наследник Input -> наследник Label
+//require_once 'Radio.php';//родитель -> наследник Input -> наследник Radio
+//require_once 'Checkbox.php';//родитель -> наследник Input -> наследник Checkbox
+//require_once 'Select.php';//родитель  -> наследник Select
+//require_once 'Select1.php';//родитель  -> наследник Select
+//require_once 'Point.php';//родитель  -> наследник
+//require_once 'CircleC.php';//родитель  -> наследник
+//require_once 'Rectangles.php';//родитель  -> наследник
+//require_once 'app/menu/Menu.php';//подключение меню
+//require_once 'app/menu/MenuItem.php';//подключение меню
 
 
 /*   раздел меню */
-use menu\MenuItem;//передали пространство имен
-use menu\Menu;//передали пространство имен
+//use menu\MenuItem;//передали пространство имен
+//use menu\Menu;//передали пространство имен
 
 $a = new Menu();//объект класса Menu
 //$a->PrintMenu(1000,100, 'green', 'black');//метод PrintMenu
