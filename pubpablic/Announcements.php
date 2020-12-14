@@ -1,6 +1,6 @@
 <?php
-//namespace pubpablic\pub;//подключили пространство имен   \pubpablic(папка)\
-
+namespace pubpablic;//подключили пространство имен   \pubpablic(папка)\
+//пространство имен записываем имя папки
 class Announcements extends Publication  //наследник abstract class Publication
 {
     private $endDay;

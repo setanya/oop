@@ -1,5 +1,5 @@
 <?php
-//namespace  pubpablic\pub;//подключили пространство имен    \pubpablic(папка)\
+namespace  pubpablic;//подключили пространство имен    \pubpablic(папка)\
 
 class Articles extends Publication //наследник abstract class Publication
 {

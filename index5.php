@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+//session_destroy();
 //require_once 'Control.php';//родитель
 //require_once 'Input.php';//родитель -> наследник Input
 //require_once 'Button.php';//родитель -> наследник Input -> наследник Button
@@ -14,17 +15,16 @@
 //require_once 'Rectangles.php';//родитель  -> наследник
 //require_once 'app/menu/Menu.php';//подключение меню//подключили пространство имен
 //require_once 'app/menu/MenuItem.php';//подключение меню//подключили пространство имен
-require_once 'pubpablic/Publication.php';
-require_once 'pubpablic/News.php';
-require_once 'pubpablic/Articles.php';
-require_once 'pubpablic/Announcements.php';
+//require_once 'pubpablic/Publication.php';
+//require_once 'pubpablic/News.php';
+//require_once 'pubpablic/Articles.php';
+//require_once 'pubpablic/Announcements.php';
 /////*-----------------------------------------------------------------*/
 use \app\lib\libary;
-//подключили пространство имен    app(папка)\pubpablic(папка)\
-//use pubpablic\pub\Publication;
-//use pubpablic\pub\Articles;//подключили пространство имен    app(папка)\pubpablic(папка)\
-//use pubpablic\pub\Announcements;//подключили пространство имен    app(папка)\pubpablic(папка)\
-//use pubpablic\pub\News;//подключили пространство имен    app(папка)\pubpablic(папка)\
+use pubpablic\Publication;
+use pubpablic\Articles;//подключили пространство имен    pubpablic(папка)\имя класса Articles
+use pubpablic\Announcements;//подключили пространство имен    pubpablic(папка)\имя класса Announcements
+use pubpablic\News;//подключили пространство имен    pubpablic(папка)\имя класса News
 
 /**publishing
  * в параметр приходит имя класса вместе с пространством имени
@@ -32,11 +32,15 @@ use \app\lib\libary;
 function auto_load($class)//наша функция для авто загрузги с пространством имен
 {
     //echo $class.'<br>';//pub\News
-    $str = str_replace('\\', '/', $class);//нужна для замены слешей, для формирования пути
+    $str = $_SERVER['DOCUMENT_ROOT'].'/';
+    $str .= str_replace('\\', '/', $class);//нужна для замены слешей, для формирования пути
+    $str .='.php';
     // echo $str . '.php'.'<br>';//pub/News.php
-     require_once $str.'.php' ;
+    //echo $str;
+    if(is_file($str)){
+        require_once $str ;
+    }
 }
-
 spl_autoload_register('auto_load');//функция автозагрузки
 /*-----------------------------*/
 // function autoload($cl){
@@ -50,11 +54,23 @@ spl_autoload_register('auto_load');//функция автозагрузки
 //   }
 //spl_autoload_register('autoload');//функция автозагрузки
 
-//$k = new News('Новость 1', "Скоро открытие нового магазина Виталюр", "");
-//echo $k.'<br>';
+
+
 /*-----------------------------------------------------------------*/
 $user = new libary();
 echo '<br>';
+
+
+$obj = new Example();
+echo '<br>';
+$obj->run();//вызвали метод объекта trait Hello
+echo '<br>';
+$obj->showRun();
+echo '<br>';
+echo $obj;
+echo '<br>';
+
+
 /////*   раздел меню */
 use app\menu\MenuItem;//подключили пространство имен
 use app\menu\Menu;//app(папка)\menu(папка)\Menu(класс)
@@ -70,15 +86,8 @@ echo $a->AddMenuItem('#', 'Login');
 echo $a->PrintMenu(1000,100, '#0fb0f8', 'red'). '<br>';//вывело цветной квадрат
 echo '<br>'.'<br>'.'<br>';
 
-$obj = new Example();
-echo '<br>';
-$obj->run();//вызвали метод объекта trait Hello
-echo '<br>';
-$obj->showRun();
-echo '<br>';
-echo $obj;
-echo '<br>';
-
+$k = new News('fffff', 'fff','ffffff');
+echo $k->show();
 //$p = new News('Новость', "Будьте осторожны ГОЛОЛЁД", "");
 //echo $p->show();
 //echo '<br>';
@@ -98,6 +107,47 @@ $arblock[]= new Articles('Статья 3','Какой подарок  лучше
 foreach ($arblock as $key){//цикл который перебираем и на каждом шаге выводим 
     echo $key->show();
 }
+/*-------------------------------------*/
+
+$prod1 = new \classes\cart\Product('apple', 100, 1);//создали объекты
+$prod2 = new \classes\cart\Product('peach', 200, 14);//создали объекты
+$prod3 = new \classes\cart\Product('potato', 500, 10);//создали объекты
+$prod4 = new \classes\cart\Product('milk', 10, 1);//создали объекты
+
+$cart = new classes\cart\Cart();//вызвали объект класса Cart()
+//$cart->addToCart($prod1); //дописываем объекты в массив
+//$cart->addToCart($prod2); //дописываем объекты в массив
+//$cart->addToCart($prod3); //дописываем объекты в массив
+//$cart->addToCart($prod4); //дописываем объекты в массив
+
+$cart->getCart(); // выводим массив
+//echo '<pre>';
+//print_r($_SESSION['cart']);
+//echo '</pre>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
