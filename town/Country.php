@@ -7,7 +7,6 @@ namespace town;
 class Country
 {
     public $listTown = [];
-
     /*
      * Country constructor. вызываем сесию и присваиваем ей ['country']); помещаем массив из значений
      * в цикле перебираем массив пришедший в сесию и (unserialize)разбитый массив на ключ =>значение
