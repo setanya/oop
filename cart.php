@@ -64,12 +64,19 @@ while ($arRes =$res->fetch_assoc()){// до тех пор пока не нулл
     print_r($arRes);//выводится количество  массивов
     echo '</pre>';//
 }
-$user = new User($mysql, 'Petya', '258963');
+$user = new User($mysql, '', '');//класс User.php
 //$user->addUser();//добавление
-//$user->delete(4);//удаление
-echo $user->update(5, ['login' =>'Misha', 'password' => '00053']);//удаление
-
-
+//$user->delete(9);//удаление
+//echo $user->update(5, ['login' =>'Misha', 'password' => '00053']);//редактирование
+//var_dump($user->getAll());
+$a = $user->getById(4) ;//
+print_r($a->fetch_assoc());//вывести имя нужного $id
+echo '<br>';
+//вывести всех пользователей из таблицы
+$b =$user->getAll();
+echo '<pre>';
+print_r ($b->fetch_all(MYSQLI_ASSOC));//fetch_all извлекает все строки из результирующего набора
+echo '</pre>';
 
 
 
