@@ -6,7 +6,7 @@ class User
     public $login;
     public $password;
     protected $mysql;
-    public function __construct(mysqli $mysql, $login, $password){
+    public function __construct(mysqli $mysql, $login = '', $password = ''){
 //        if (strlen($login)>3 && strlen($login)<10){//strlen если  длинна строки
 //            $this->login = $login;
 //        }
@@ -65,6 +65,41 @@ class User
         $sql = "SELECT `login` FROM `users` WHERE `id`=".$id;
             return $this->mysql->query($sql);
     }
+    public function getByLogin($login)
+    {
+        $sql = "SELECT `login` FROM `users` WHERE `login`='".$login."'";
+        return $this->mysql->query($sql);
+    }
+
+    public function register($userParam)
+    {
+        $resCeckUser = $this->getByLogin($userParam['login'])->num_rows;
+        if($resCeckUser > 0){
+            return ' Такой пользователь в базе есть';
+        }else{
+            $sql = "INSERT INTO `users` SET `login` = '".$userParam['login']."', `password` = '".md5($userParam['password'])."'";
+            $this->mysql->query($sql);
+            return 'Вы успешно зарегистрированы';
+        }
+
+    }
+    public function auth($userParam)
+    {
+        $login =htmlspecialchars($userParam['login']);
+        $pass =md5($userParam['password']);
+        $sql = "SELECT * FROM `users` WHERE `login`='".$login ."' AND `password` = '".$pass."'";
+        var_dump($this->mysql->query($sql));
+        if($this->mysql->query($sql)->num_rows>0){
+            echo 'Пользователь авторизован';
+        }else{
+            echo 'Неверно ввели данные';
+        }
+    }
+
+
+
+
+
 }
 //try{// блок который ловит исключение
 //    $user = new User('loginh', 1212121);

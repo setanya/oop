@@ -59,11 +59,11 @@ if ($mysql->connect_error) {//если не состоялось  подключ
 $res = $mysql->query("SELECT * FROM `users`");//выполняем запрос, Возвращает объект запроса
 //print_r($res->fetch_assoc());//возвращаяе первую найденную запись
 
-while ($arRes =$res->fetch_assoc()){// до тех пор пока не нулл
-    echo '<pre>';
-    print_r($arRes);//выводится количество  массивов
-    echo '</pre>';//
-}
+//while ($arRes =$res->fetch_assoc()){// до тех пор пока не нулл
+//    echo '<pre>';
+//    print_r($arRes);//выводится количество  массивов
+//    echo '</pre>';//
+//}
 $user = new User($mysql, '', '');//класс User.php
 //$user->addUser();//добавление
 //$user->delete(9);//удаление
@@ -74,15 +74,65 @@ print_r($a->fetch_assoc());//вывести имя нужного $id
 echo '<br>';
 //вывести всех пользователей из таблицы
 $b =$user->getAll();
-echo '<pre>';
-print_r ($b->fetch_all(MYSQLI_ASSOC));//fetch_all извлекает все строки из результирующего набора
-echo '</pre>';
+//echo '<pre>';
+//print_r ($b->fetch_all(MYSQLI_ASSOC));//fetch_all извлекает все строки из результирующего набора
+//echo '</pre>';
+//$w = $b->fetch_all(MYSQLI_ASSOC);
+//foreach ($w as $key => $value) {
+//    foreach ($value as $iKey => $iValue) {
+//        echo "$iValue <br>";
+//    }
+//}
+
+
+//($f->fetch_assoc());//вывести имя нужного $id
+if(isset($_REQUEST['submit'])){
+    $login = $_REQUEST['inputLogin'];
+    $pass = $_REQUEST['inputPassword'];//шифруем пароль
+    echo  $user->register(['login'=>$login,'password'=>$pass]);
+}
+echo '<br><br><br>';
+if(isset($_REQUEST['submit'])){
+    $login = $_REQUEST['inputLogin'];
+    $pass = $_REQUEST['inputPassword'];//шифруем пароль
+    $user->auth(['login'=>$login,'password'=>$pass]);
+}
+
+
+$form = new Form();
+echo $form->beginForm();
+echo "Введите логин";
+echo '<br>';
+echo $form->input(['type'=>'text','name'=>'inputLogin', 'id'=>'inp']);//ассоциативный массив ключ =>значение
+echo '<br>';
+echo "Введите пароль";
+echo '<br>';
+echo $form->input(['type'=>'password','name'=>'inputPassword', 'id'=>'pass']);//ассоциативный массив ключ =>значение
+echo '<br>';
+echo '<br>';
+echo $form->button(['type'=>'submit', 'name'=>'submit'], 'Зарегистрироваться');
+echo '<br>';
+echo $form->endForm();
 
 
 
 
-
-
-
+//echo '<pre>';//проверили что отправили данные
+//print_r($_POST);
+//echo '</pre>';
+echo '<br><br><br>';
+$form = new Form();
+echo $form->beginForm();
+echo "Введите логин";
+echo '<br>';
+echo $form->input(['type'=>'text','name'=>'inputLogin', 'id'=>'inp']);//ассоциативный массив ключ =>значение
+echo '<br>';
+echo 'Выберите город';
+echo '<br>';
+echo $form->select(['name'=>'city'],['Москва'=>'Москва','Минск'=>'Минск','Киев'=>'Киев']);
+echo '<br>';
+echo $form->button(['type'=>'submit', 'name'=>'submit'], 'Отправить');
+echo '<br>';
+echo $form->endForm();
 
 
