@@ -70,7 +70,7 @@ class User
 //    $user = new User('loginh', 1212121);
 //    echo $user->addUser();//если условия верные тогда записать в базу
 //}catch (Exception $e){
-//    echo $e->getMessage();//вернуть ** throw new Exception('Неверный логин');
+//    echo $e->getMessage();//вернуть getMessage() == throw new Exception('Неверный логин');
 //}
 
 
