@@ -64,7 +64,7 @@ $res = $mysql->query("SELECT * FROM `users`");//выполняем запрос,
 //    print_r($arRes);//выводится количество  массивов
 //    echo '</pre>';//
 //}
-$user = new User($mysql, '', '');//класс User.php
+$user = new User($mysql);//класс User.php
 //$user->addUser();//добавление
 //$user->delete(9);//удаление
 //echo $user->update(5, ['login' =>'Misha', 'password' => '00053']);//редактирование
@@ -83,19 +83,19 @@ $b =$user->getAll();
 //        echo "$iValue <br>";
 //    }
 //}
-
-
 //($f->fetch_assoc());//вывести имя нужного $id
+//************************************************************************************
+//форма регистрации и авторизации
 if(isset($_REQUEST['submit'])){
     $login = $_REQUEST['inputLogin'];
-    $pass = $_REQUEST['inputPassword'];//шифруем пароль
+    $pass = $_REQUEST['inputPassword'];
     echo  $user->register(['login'=>$login,'password'=>$pass]);
 }
 echo '<br><br><br>';
 if(isset($_REQUEST['submit'])){
     $login = $_REQUEST['inputLogin'];
-    $pass = $_REQUEST['inputPassword'];//шифруем пароль
-    $user->auth(['login'=>$login,'password'=>$pass]);
+    $pass = $_REQUEST['inputPassword'];
+    echo $user->auth(['login'=>$login,'password'=>$pass]);
 }
 
 
@@ -120,19 +120,19 @@ echo $form->endForm();
 //echo '<pre>';//проверили что отправили данные
 //print_r($_POST);
 //echo '</pre>';
-echo '<br><br><br>';
-$form = new Form();
-echo $form->beginForm();
-echo "Введите логин";
-echo '<br>';
-echo $form->input(['type'=>'text','name'=>'inputLogin', 'id'=>'inp']);//ассоциативный массив ключ =>значение
-echo '<br>';
-echo 'Выберите город';
-echo '<br>';
-echo $form->select(['name'=>'city'],['Москва'=>'Москва','Минск'=>'Минск','Киев'=>'Киев']);
-echo '<br>';
-echo $form->button(['type'=>'submit', 'name'=>'submit'], 'Отправить');
-echo '<br>';
-echo $form->endForm();
+//echo '<br><br><br>';
+//$form = new Form();
+//echo $form->beginForm();
+//echo "Введите логин";
+//echo '<br>';
+//echo $form->input(['type'=>'text','name'=>'inputLogin', 'id'=>'inp']);//ассоциативный массив ключ =>значение
+//echo '<br>';
+//echo 'Выберите город';
+//echo '<br>';
+//echo $form->select(['name'=>'city'],['Москва'=>'Москва','Минск'=>'Минск','Киев'=>'Киев']);
+//echo '<br>';
+//echo $form->button(['type'=>'submit', 'name'=>'submit'], 'Отправить');
+//echo '<br>';
+//echo $form->endForm();
 
 
