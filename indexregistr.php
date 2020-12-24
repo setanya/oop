@@ -1,6 +1,6 @@
 <?php
-//setcookie('login', '', time()+60*60, '/');//установка куки
-///session_start();
+//session_start();
+
 function auto_load($class)//наша функция для авто загрузки
 {
     //echo $class.'<br>';//pub\News
@@ -14,8 +14,10 @@ function auto_load($class)//наша функция для авто загруз
     }
 }
 spl_autoload_register('auto_load');//функция автозагрузки
-
-$mysql = new mysqli('localhost', 'root', '', 'test');
+//Cooki::setCookie('exmpl', 'yes');//установленна кука статический метод
+//echo Cooki::getCookie('exmpl');// вывод статический метод
+//die();
+$mysql = new mysqli('localhost', 'root', '', 'test');//создали объект с классом mysqli
 //Подключаемся к базе . Возвращается объект
 
 if ($mysql->connect_error) {//если не состоялось  подключение
@@ -26,13 +28,17 @@ $user = new User($mysql);//класс User.php
 //форма регистрации ------------------------------------------------
 //print_r($_REQUEST);//проверяем что приходит в массиве
 //$_REQUEST - глобальный массив(попадает и из гет и пост)
-if(isset($_REQUEST['submit']) && isset($_COOKIE)){
-    $login = $_REQUEST['inputLogin'];//ключ логин
-    $pass = $_REQUEST['inputPassword'];//ключ пароль
-    setcookie('login', $login,time() + 60,'/');//установили куки
-    echo  $user->register(['login'=>$login,'password'=>$pass]);//
-    //пришедшие данные из $_REQUEST передаем в метод  public function register($userParam)
+//if(isset($_REQUEST['submit'])){
+//    $login = $_REQUEST['inputLogin'];//ключ логин
+//    $pass = $_REQUEST['inputPassword'];//ключ пароль
+//    setcookie('login', $login,time() + 60,'/');//установили куки
+//    echo  $user->register(['login'=>$login,'password'=>$pass]);//
+//    //пришедшие данные из $_REQUEST передаем в метод  public function register($userParam)
+//}
+if(User::isAuth()){
+    echo  'ПРИВЕТ '.$_SESSION['login'];
 }
+print_r($_SESSION['login']);
 //форма  авторизации ----------------------------------------
 if(isset($_REQUEST['submit']) && isset($_COOKIE)){
     $login = $_REQUEST['inputLogin'];

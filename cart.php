@@ -86,11 +86,15 @@ $b =$user->getAll();
 //($f->fetch_assoc());//вывести имя нужного $id
 //************************************************************************************
 //форма регистрации и авторизации
-if(isset($_REQUEST['submit'])){
-    $login = $_REQUEST['inputLogin'];
-    $pass = $_REQUEST['inputPassword'];
-    echo  $user->register(['login'=>$login,'password'=>$pass]);
-}
+//if(isset($_REQUEST['submit'])){
+//    $login = $_REQUEST['inputLogin'];
+//    $pass = $_REQUEST['inputPassword'];
+//    echo  $user->register(['login'=>$login,'password'=>$pass]);
+//}
+
+
+
+
 echo '<br><br><br>';
 if(isset($_REQUEST['submit'])){
     $login = $_REQUEST['inputLogin'];

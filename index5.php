@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //session_destroy();
 //require_once 'Control.php';//родитель
 //require_once 'Input.php';//родитель -> наследник Input
